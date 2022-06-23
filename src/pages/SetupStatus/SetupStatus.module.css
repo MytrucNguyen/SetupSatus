@@ -1,0 +1,136 @@
+.SetupStatusWrapper {
+    background-color: white;
+    display: flex; 
+    padding: 1rem; 
+    margin-left: 1rem;
+    margin-right: 1rem; 
+    justify-content: space-between; 
+    align-items: center; 
+    height: 20rem;
+
+}
+
+.CheckMark {
+    color: #ffffff; 
+font-size: 1.25rem;
+line-height: 1.75rem; 
+font-weight: 700; 
+}
+
+.StatusBar {
+    display: flex; 
+    align-items: center; 
+    width: 100%; 
+}
+
+.StatusBarLineCurrent {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform; 
+    transition-duration: 500ms; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+    flex: 1 1 auto; 
+    border-top-width: 20px; 
+    
+}
+
+.ProcessBar {
+    border-color: #059669;
+}
+
+.Inactive {
+    border-color: #D1D5DB; 
+}
+
+.EndStatusBar {
+    display: flex; 
+    align-items: center; 
+}
+
+.StatusText {
+    display: flex; 
+    position: relative; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.StatusCircleCurrent {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform; 
+    transition-duration: 500ms; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+    border-radius: 4px; 
+    border-radius: 9999px; 
+    /* border-width: 2px;  */
+    display: flex; 
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem; 
+    justify-content: center; 
+    align-items: center; 
+    width: 3rem; 
+    height: 1.5rem;
+    background-color: #059669; 
+    color: #ffffff; 
+    font-weight: 700; 
+    border-width: 1px; 
+}
+
+.StatusCircleNotCurrent {
+    display: flex; 
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem; 
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform; 
+    transition-duration: 500ms; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+    justify-content: center; 
+    align-items: center; 
+    width: 3rem; 
+    height: 1.5rem;
+    border-radius: 9999px; 
+    border-width: 2px; 
+    border-color: #D1D5DB; 
+
+    background-color: gray;
+}
+
+.StatusNameCurrent {
+    position: absolute; 
+    top: 0; 
+    margin-top: 4rem; 
+    font-size: 0.75rem;
+    line-height: 1rem; 
+    font-weight: 500; 
+    text-align: center; 
+    text-transform: uppercase; 
+    width: 8rem; 
+    color: #111827; 
+}
+
+.StatusNameNotCurrent {
+    position: absolute; 
+    top: 0; 
+    margin-top: 4rem; 
+    font-size: 0.75rem;
+    line-height: 1rem; 
+    font-weight: 500; 
+    text-align: center; 
+    text-transform: uppercase; 
+    width: 8rem; 
+    color: #9CA3AF; 
+}
+
+.StatusProccessBarCurrent {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform; 
+transition-duration: 500ms; 
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+flex: 1 1 auto; 
+border-top-width: 2px; 
+border-color: #059669; 
+
+}
+.StatusProccessBarNotCurrent {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform; 
+transition-duration: 500ms; 
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+flex: 1 1 auto; 
+border-top-width: 2px; 
+border-color: #D1D5DB; 
+
+}
