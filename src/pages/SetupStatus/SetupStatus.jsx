@@ -1,56 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./SetupStatus.module.css";
 import { steps } from "../../data/data";
 
 const SetupStatus = () => {
-  let flattenSteps = []
-  let isCompleted = []
-  let totalSteps = Object.getOwnPropertyNames(steps).length
+  let flattenSteps = [];
+  let totalSteps = Object.getOwnPropertyNames(steps).length;
+  let [currentIndex, setCurrentIndex] = useState(0);
 
-  for(let i = 0; i < totalSteps; i++){
-    flattenSteps[i] = steps[Object.keys(steps)[i]]
-  }
-
-  const checkingStepCompletion = (flattenSteps) => {
-    for (let i = 0; i < flattenSteps.length; i++) {
-      if (flattenSteps[i].status === "complete") {
-        isCompleted[i] = (true)
-      } else {
-        isCompleted[i] = (false)
-      }
-    }
-
+  const clickStep = (index) => {
+    setCurrentIndex(index);
   };
+  console.log(currentIndex);
 
-  checkingStepCompletion(flattenSteps);
+  for (let i = 0; i < totalSteps; i++) {
+    flattenSteps[i] = steps[Object.keys(steps)[i]];
+  }
 
   return (
     <div className={style.SetupStatusWrapper}>
-
       {flattenSteps.map((step, index) => (
         <div
           key={index}
           className={
-            index !== flattenSteps.length - 1 ? style.StatusBar : style.EndStatusBar
+            index !== flattenSteps.length - 1
+              ? style.StatusBar
+              : style.EndStatusBar
           }
         >
           <div className={style.StatusText}>
             <div
+              onClick={() => clickStep(index)}
               className={
-                isCompleted[index]
+                currentIndex >= index
                   ? style.StatusCircleCurrent
                   : style.StatusCircleNotCurrent
               }
             >
-              {isCompleted[index] ? (
-                  <span className={style.Checkmark}>&#10003;</span>
-                  ) : (
-                  <>{index + 1}</>
+              {currentIndex >= [index] ? (
+                <span className={style.Checkmark}>&#10003;</span>
+              ) : (
+                <div>{index + 1}</div>
               )}
             </div>
             <div
               className={
-                isCompleted[index]
+                currentIndex >= index
                   ? style.StatusNameCurrent
                   : style.StatusNameNotCurrent
               }
@@ -61,7 +55,7 @@ const SetupStatus = () => {
           <div className={style.StatusBarLineCurrent}>
             <hr
               className={
-                isCompleted[index] ? style.ProcessBar : style.Inactive
+                currentIndex >= index ? style.ProcessBar : style.Inactive
               }
             />
           </div>
